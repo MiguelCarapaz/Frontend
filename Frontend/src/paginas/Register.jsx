@@ -52,7 +52,7 @@ export const Register = () => {
         Swal.fire({
           position: "center",
           icon: "info",
-          title: "Confirma tu cuenta",
+          title: "Revisa tu correo electronico para confirmar tu cuenta",
           showConfirmButton: false,
           timer: 2000,
         });
