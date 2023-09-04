@@ -53,7 +53,6 @@ const Visualizar = () => {
         </h1>
         <hr className="my-4" />
         <p className="mb-8">
-          Este módulo te permite visualizar los datos del paciente
         </p>
       </div>
       <div>

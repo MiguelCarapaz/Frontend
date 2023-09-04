@@ -4,6 +4,7 @@ import Mensaje from "../Alertas/Mensaje";
 import Swal from "sweetalert2";
 import { useFormik } from "formik";
 import Cookies from "js-cookie";
+
 const FormularioPerfil = () => {
   const { auth, actualizarPerfil } = useContext(AuthContext);
   const [mensaje, setMensaje] = useState({});
@@ -49,15 +50,14 @@ const FormularioPerfil = () => {
     return errors;
   };
 
-  
   const formik = useFormik({
     initialValues: {
       id: initialId, // Usar el valor de initialId
-      nombre: Cookies.get("perfilNombre") || "",
-      apellido: Cookies.get("perfilApellido") || "",
-      direccion: Cookies.get("perfilDireccion") || "",
-      telefono: Cookies.get("perfilTelefono") || "",
-      email: Cookies.get("perfilEmail") || "",
+      nombre: Cookies.get("perfilNombre") || auth.nombre || "", // Utilizar el valor de auth.nombre si está disponible
+      apellido: Cookies.get("perfilApellido") || auth.apellido || "", // Utilizar el valor de auth.apellido si está disponible
+      direccion: Cookies.get("perfilDireccion") || auth.direccion || "", // Utilizar el valor de auth.direccion si está disponible
+      telefono: Cookies.get("perfilTelefono") || auth.telefono || "", // Utilizar el valor de auth.telefono si está disponible
+      email: Cookies.get("perfilEmail") || auth.email || "", // Utilizar el valor de auth.email si está disponible
     },
     validate,
     onSubmit: async (values) => {
@@ -66,13 +66,15 @@ const FormularioPerfil = () => {
 
       const resultado = await actualizarPerfil(values);
       setMensaje(resultado);
-           Swal.fire({
-      position: "center",
-      icon: "success",
-      title: "Información actualizada",
-      showConfirmButton: false,
-      timer: 2000,
-    });
+
+      Swal.fire({
+        position: "center",
+        icon: "success",
+        title: "Información actualizada",
+        showConfirmButton: false,
+        timer: 2000,
+      });
+
       setTimeout(() => {
         setMensaje({});
       }, 3000);

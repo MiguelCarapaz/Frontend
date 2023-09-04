@@ -128,8 +128,8 @@ const Login = () => {
               </Link>
             </div>
 
-            <div className="mt-3 text-sm flex justify-between items-center">
-              <p>No tienes una cuenta?</p>
+            <div className="mt-3 text-sm flex justify-end items-center">
+      
               <Link
                 to="/register"
                 className="py-2 px-5 bg-gray-600 text-slate-300 border rounded-xl hover:scale-110 duration-300 hover:bg-gray-900 hover:text-white"

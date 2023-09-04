@@ -12,7 +12,7 @@ const Dashboard = () => {
     <div className="md:flex md:min-h-screen">
       <div className="md:w-1/5 bg-gray-800 px-5 py-4">
         <h2 className="text-4xl font-black text-center text-slate-200">
-          APP-DEMO
+          VETERINARIA
         </h2>
 
         <img
@@ -105,7 +105,11 @@ const Dashboard = () => {
         </div>
         <div className="bg-gray-800 h-12">
           <p className="text-center  text-slate-100 leading-[2.9rem] underline">
-            Todos los derechos reservados
+            Todos los derechos reservados:
+            David Basantes -
+            Miguel Carapaz -
+            Jose Panchi -
+            Jose Pinos -
           </p>
         </div>
       </div>
