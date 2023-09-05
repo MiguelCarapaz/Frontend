@@ -92,9 +92,9 @@ export const Formulario = ({ paciente }) => {
 
           navigate('/dashboard/listar');
         } catch (error) {
-          setMensaje({ respuesta: error.response.data.msg, tipo: false });
+          //setMensaje({ respuesta: error.response.data.msg, tipo: false });
           setTimeout(() => {
-            setMensaje({});
+            //setMensaje({});
           }, 3000);
         } finally {
           setSubmitting(false);
@@ -104,7 +104,8 @@ export const Formulario = ({ paciente }) => {
       {({ handleSubmit, isSubmitting, errors, touched, values, setFieldValue }) => (
         <form onSubmit={handleSubmit}>
           {Object.keys(mensaje).length > 0 && (
-            <Mensaje tipo={mensaje.tipo}>{mensaje.respuesta}</Mensaje>
+            //<Mensaje tipo={mensaje.tipo}>{mensaje.respuesta}</Mensaje>
+            ""
           )}
           <div>
             <label

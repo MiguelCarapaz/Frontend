@@ -58,7 +58,7 @@ export const Register = () => {
         });
         formik.resetForm();
       } catch (error) {
-        setMensaje({ respuesta: error.response.data.msg, tipo: false });
+        //setMensaje({ respuesta: error.response.data.msg, tipo: false });
       }
     },
   });
@@ -73,7 +73,8 @@ export const Register = () => {
       <div className="bg-white flex justify-center items-center w-1/2">
         <div className="md:w-4/5 sm:w-full">
           {Object.keys(mensaje).length > 0 && (
-            <Mensaje tipo={mensaje.tipo}>{mensaje.respuesta}</Mensaje>
+            //<Mensaje tipo={mensaje.tipo}>{mensaje.respuesta}</Mensaje>
+            ""
           )}
           <h1 className="text-3xl font-semibold mb-2 text-center uppercase text-gray-500">
             BIENVENIDO
