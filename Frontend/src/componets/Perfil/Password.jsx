@@ -25,6 +25,13 @@ const Password = () => {
         respuesta: "Todos los campos deben ser ingresados",
         tipo: false,
       });
+      Swal.fire({
+        position: "center",
+        icon: "error",
+        title: "Todos los campos deben ser ingresados",
+        showConfirmButton: false,
+        timer: 2000,
+      });
       setTimeout(() => {
         setMensaje({});
       }, 3000);
@@ -35,6 +42,13 @@ const Password = () => {
       setMensaje({
         respuesta: "El password debe tener mínimo 6 carácteres",
         tipo: false,
+      });
+      Swal.fire({
+        position: "center",
+        icon: "error",
+        title: "La contraseña debe tener mínimo 6 caraceteres",
+        showConfirmButton: false,
+        timer: 2000,
       });
       setTimeout(() => {
         setMensaje({});
@@ -67,7 +81,8 @@ const Password = () => {
       </div>
       <form onSubmit={handleSubmit}>
         {Object.keys(mensaje).length > 0 && (
-          <Mensaje tipo={mensaje.tipo}>{mensaje.respuesta}</Mensaje>
+          //<Mensaje tipo={mensaje.tipo}>{mensaje.respuesta}</Mensaje>
+          ""
         )}
         <div>
           <label

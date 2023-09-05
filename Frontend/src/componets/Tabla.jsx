@@ -3,6 +3,7 @@ import { MdDeleteForever, MdNoteAdd, MdInfo } from "react-icons/md";
 import axios from "axios";
 import Mensaje from "./Alertas/Mensaje";
 import { useNavigate } from "react-router-dom";
+import Swal from "sweetalert2";
 
 
 const Tabla = () => {
@@ -14,7 +15,7 @@ const Tabla = () => {
 
 
   const [currentPage, setCurrentPage] = useState(0);
-  const patientsPerPage = 10; // Cantidad de pacientes por página
+  const patientsPerPage = 6; // Cantidad de pacientes por página
 
   const indexOfLastPatient = (currentPage + 1) * patientsPerPage;
   const indexOfFirstPatient = indexOfLastPatient - patientsPerPage;
@@ -269,7 +270,8 @@ return (
 
     {busqueda === "" ? (
       currentPatients.length === 0 ? (
-        <Mensaje tipo={"active"}>{"No existen registros"}</Mensaje>
+        //<Mensaje tipo={"active"}>{"No existen registros"}</Mensaje>
+        ""
       ) : (
         <div>
           <table className="w-full mt-5 table-auto shadow-lg bg-white">
